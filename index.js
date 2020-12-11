@@ -13,6 +13,7 @@ console.log(digital_root(4321));
 console.log(digital_root(26061990));
 
 /* function friend(friends) {
+    Voir ligne 28
     //Nouvel array pour push les amis qui passent le test
     let realFriends = [];
     for (var i = 0; i < friends.length; ++i) { //On boucle s/ la longueur de friends
@@ -427,7 +428,7 @@ console.log(convertToNum('IV'));
 }; */
 
 function text2Binary(string) {
-    return string.split('').map(function(char) { //Récupère chaque char et map
+    return string.split('').map(char => { //Récupère chaque char et map
         return char.charCodeAt(0).toString(2); //converti chaque char et récupère le Ascii Code en décimal puis transforme en binaire
     }).join(' '); //transforme le tout en string
 };
@@ -485,6 +486,7 @@ const isPrime = (num) => {
     return num > 1
 };
 
+
 //Prends les mots de 4 lettres ou plus d'une string et les reverse
 /* function spinWords(str) {
     let strArr = str.split(' ');
@@ -528,3 +530,15 @@ for (let i = 1; i <= 100; i++) {
         console.log(i);
     }
 };
+
+
+//Decoding Binary Message
+function binary2Text(message) {
+    return message
+            .split(' ')
+            .map(b => parseInt(b, 2))
+            .map(num => String.fromCharCode(num))
+            .join('');
+};
+
+console.log(binary2Text("1010101 1101110 100000 1101101 1100001 1100111 1101001 1100011 1101001 1100101 1101110 100000 1101110 100111 1100101 1110011 1110100 100000 1101010 1100001 1101101 1100001 1101001 1110011 100000 1100101 1101110 100000 1110010 1100101 1110100 1100001 1110010 1100100 101100 100000 1101110 1101001 100000 1100101 1101110 100000 1100001 1110110 1100001 1101110 1100011 1100101 100000 1100100 100111 1100001 1101001 1101100 1101100 1100101 1110101 1110010 1110011 101110 100000 1001001 1101100 100000 1100001 1110010 1110010 1101001 1110110 1100101 100000 1110000 1110010 11101001 1100011 1101001 1110011 11101001 1101101 1100101 1101110 1110100 100000 11100000 100000 1101100 100111 1101000 1100101 1110101 1110010 1100101 100000 1110000 1110010 11101001 1110110 1110101 1100101 101110"));
